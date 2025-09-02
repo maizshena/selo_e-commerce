@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout Successful</title>
+  <script src="checkout-success.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+  @keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+  </style>
+
+</head>
+<body class="bg-gray-100 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="text-center">
+    <h1 class="text-3xl font-bold mb-8">Checkout Successful!</h1>
+
+    <div class="bg-white shadow-lg rounded-xl p-6 w-[320px] mx-auto relative">
+      <button class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-sm">×</button>
+
+      <h2 class="text-left text-lg font-semibold mb-3">Summary</h2>
+      <div class="text-sm text-gray-500 space-y-2 mb-4">
+        <div class="flex justify-between">
+          <span>Subtotal</span><span id="subtotal">$0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Estimated Delivery & Handling</span><span id="shipping">Free</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Estimated Taxes</span><span id="tax">$0</span>
+        </div>
+      </div>
+
+      <hr class="my-4">
+      <div class="flex justify-between font-semibold text-base mb-5">
+        <span>Total</span><span id="total">$0</span>
+      </div>
+
+      <button class="bg-black text-white w-full py-2 rounded hover:bg-gray-900 mb-2">Track My Package</button>
+      <button class="border w-full py-2 rounded hover:bg-gray-100">Report a problem</button>
+
+      <p id="countdown" class="text-center text-sm mt-4 text-gray-500">
+        Redirected to home screen in <span id="seconds">3</span>
+      </p>
+
+      <script>
+        let seconds = 3;
+        const countdown = document.getElementById("seconds");
+
+        const timer = setInterval(() => {
+          seconds--;
+          countdown.textContent = seconds;
+          if (seconds === 0) {
+            clearInterval(timer);
+            window.location.href = "home.html";
+          }
+        }, 1000);
+      </script>
+
+    </div>
+  </div>
+<!-- Payment Notification Modal -->
+<div id="payment-success-toast" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center relative animate-bounce-in">
+    <img src="your-image-path.png" alt="Payment Success" class="w-20 h-20 mx-auto mb-4" />
+    <h3 class="text-xl font-semibold text-green-600 mb-2">Payment Succeeded</h3>
+    <p class="text-sm text-gray-600">Thank you for your purchase!</p>
+  </div>
+</div>
+
+</body>
+</html>

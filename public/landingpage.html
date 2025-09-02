@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélo Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">~
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="landingpage.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <style>
+        .font-borel { font-family: 'Borel', cursive; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        #flash-track {
+          scrollbar-width: none; /* Firefox */
+        }
+        #flash-track::-webkit-scrollbar {
+          display: none; /* Chrome, Safari */
+        }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+          // Tambahkan warna kustom di sini
+          primary: {
+            light: '#B0C4D6', // Warna biru muda
+            DEFAULT: '#3b82f6', // Warna biru utama
+            dark: '#4F7292', // Warna biru gelap
+          },
+          secondary: {
+            light: '#f9a8d4', // Warna pink muda
+            DEFAULT: '#ec4899', // Warna pink utama
+            dark: '#9d174d', // Warna pink gelap
+          },
+          customBrown: '#A57E5E', // Contoh warna abu-abu kustom
+          customYellow: '#F3C623',
+          customLightRed: '#F77171'
+        }
+          }
+        }
+      }
+      
+    </script>
+</head>
+
+<!-- Header -->
+<header class="w-full px-6 py-6">
+
+  <!-- Top Row: Logo kiri atas & Auth kanan atas -->
+  <div class="flex justify-between items-center mb-6">
+    <a href="#" class="text-3xl mt-3 font-medium hover:underline" style="font-family: 'Borel', sans-serif;">sélo</a>
+
+    <div class="space-x-3">
+      <a href="login.html" class="font-semibold text-sm border rounded-full px-4 py-2 hover:bg-gray-100" style="font-family: 'Inter', sans-serif;">LOGIN</a>
+      <a href="register.html" class="font-semibold text-sm border rounded-full px-4 py-2 hover:bg-gray-100" style="font-family: 'Inter', sans-serif;">REGISTER</a>
+    </div>
+  </div>
+
+  <!-- Search Section (centered) -->
+  <div class="flex flex-col items-center text-center">
+    
+    <!-- SECOND LOGO (centered below search) -->
+    <a href="#" class="text-5xl font-medium mt-16" style="font-family: 'Borel', sans-serif;">sélo</a>
+
+    <!-- Tagline -->
+    <p class="text-sm text-gray-500 mb-8 tracking-wide leading-relaxed">
+      FIND EVERYTHING YOU NEED TO LOOK AND FEEL YOUR BEST,<br />
+      SHOP THE LATEST ITEMS IN OUR SHOP
+    </p>
+
+    <!-- Search Bar -->
+    <div class="relative w-full max-w-xl mb-6">
+      <input id="search-bar" type="text" placeholder="Search products..."
+             class="w-full border rounded-full px-5 py-3 pr-12 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-300" />
+      <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">🔍</span>
+    </div>
+    <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 px-4">
+      <!-- Hasil search akan muncul di sini -->
+    </div>
+
+  </div>
+</header>
+
+<!-- Flash Sale Section -->
+<section id="flash-sale" class="relative group py-4 bg-white">
+  <div class="bg-zinc-700 text-white text-center py-1 font-bold tracking-wide text-sm">
+    FLASH SALE! <span id="flash-timer">00:00:00</span>
+  </div>
+
+  <!-- Slider Wrapper -->
+  <div class="px-5 py-5 relative overflow-hidden">
+    <div id="flash-track" class="flex transition-transform duration-500 ease-in-out"></div>
+
+    <!-- Tombol Navigasi -->
+    <!-- Tombol Kiri -->
+  <button id="prevFlash"
+    class="absolute left-10 top-1/2 -translate-y-1/2 bg-white text-gray-800 shadow-md rounded-full p-2 
+          opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 
+          transition-all duration-300 ease-in-out z-10 hover:bg-gray-200">
+    ←
+  </button>
+
+  <!-- Tombol Kanan -->
+  <button id="nextFlash"
+    class="absolute right-10 top-1/2 -translate-y-1/2 bg-white text-gray-800 shadow-md rounded-full p-2 
+          opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 
+          transition-all duration-300 ease-in-out z-10 hover:bg-gray-200">
+    →
+  </button>
+
+  </div>
+  <div class="mt-5 bg-zinc-700 text-white text-center py-1 font-bold tracking-wide text-sm"></div>
+</section>
+
+<!-- Banner -->
+<div class="px-6">
+  <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden border border-gray-300 mt-20 mb-14">
+    <img src="/assets/banner1.jpg" alt="Custom Banner" class="w-full h-full object-cover" />
+  </div>
+</div>
+
+  <!-- Categories -->
+  <div class="flex justify-center space-x-4 mt-20 mb-5">
+    <a href="#selo-house" class="font-semibold border px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition duration-200" style="font-family: 'Inter', sans-serif;">FURNITURE</a>
+    <a href="#selo-beauty" class="font-semibold border px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition duration-200" style="font-family: 'Inter', sans-serif;">BEAUTY</a>
+    <a href="#selo-groceries" class="font-semibold border px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition duration-200" style="font-family: 'Inter', sans-serif;">GROCERIES</a>
+  </div>
+
+<!-- Meet Sélo -->
+<h2 class=" text-zinc-400 font-semibold text-center text-2xl sm:text-4xl md:text-5xl mt-12" style="font-family: 'Bricolage Grotesque', sans-serif;">
+  meet <span class="font-light  text-black" style="font-family: 'Borel', sans-serif;">sélo</span>
+</h2>
+<p class="font-medium text-center text-md  text-zinc-400" style="font-family: 'Inter', sans-serif;">
+  One-stop online shop for home (furniture), self-care (beauty), and daily needs (groceries).</p>
+<div id="meet-selo" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 p-2 max-w-screen-lg mx-auto"></div>
+
+<!-- Banner -->
+<div class="px-6">
+  <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden border border-gray-300 mt-20 mb-14">
+    <img src="/assets/banner1.jpg" alt="Custom Banner" class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Sélo Furniture -->
+<h2 class="text-center text-2xl sm:text-4xl md:text-5xl mt-12" style="font-family: 'Borel', sans-serif;">
+  sélo <span class="font-bold text-zinc-400" style="font-family: 'Bricolage Grotesque', sans-serif;">furniture</span>
+</h2>
+<p class="font-medium text-center text-md  text-zinc-400" style="font-family: 'Inter', sans-serif;">Seamlessly discover and acquire trending fashion items to shape your ideal look and feel</p>
+<div id="selo-house" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 p-2 max-w-screen-lg mx-auto"></div>
+
+<!-- Banner -->
+<div class="px-6">
+  <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden border border-gray-300 mt-20 mb-14">
+    <img src="/assets/banner1.jpg" alt="Custom Banner" class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Sélo Beauty -->
+<h2 class="text-center text-2xl sm:text-4xl md:text-5xl mt-12" style="font-family: 'Borel', sans-serif;">
+  sélo <span class="font-bold text-zinc-400" style="font-family: 'Bricolage Grotesque', sans-serif;">beauty</span>
+</h2>
+<div id="selo-beauty" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4 gap-3 p-2 max-w-screen-lg mx-auto"></div>
+
+<!-- Banner -->
+<div class="px-6">
+  <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden border border-gray-300 mt-20 mb-14">
+    <img src="/assets/banner1.jpg" alt="Custom Banner" class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Sélo Groceries -->
+<h2 class="text-center text-2xl sm:text-4xl md:text-5xl mt-12" style="font-family: 'Borel', sans-serif;">
+  sélo <span class="font-bold text-zinc-400" style="font-family: 'Bricolage Grotesque', sans-serif;">groceries</span>
+</h2>
+
+<div id="selo-groceries" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4 gap-3 p-2 max-w-screen-lg mx-auto"></div>
+
+<!-- Banner -->
+<div class="px-6">
+  <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden border border-gray-300 mt-20 mb-14">
+    <img src="/assets/banner1.jpg" alt="Custom Banner" class="w-full h-full object-cover" />
+  </div>
+</div>
+ 
+<footer class="mt-20 bg-white py-10 border-t border-gray-200">
+    <div class="container mx-auto text-center">
+      <h2 class="text-2xl font-bold text-gray-700 mb-4" style=" font-family: 'Bricolage Grotesque', sans-serif;">About <span class="font-medium" style=" font-family: 'Borel', sans-serif;">sèlo</span></h2>
+      <div class="flex flex-wrap justify-center mb-6 space-x-6 text-sm text-gray-500">
+        <a href="#" class="hover:text-gray-700">Sèlo CARE</a>
+        <a href="#" class="hover:text-gray-700">Sèlo CUSTOMER SERVICE</a>
+        <a href="#" class="hover:text-gray-700">Sèlo LOREM IPSUM</a>
+        <a href="#" class="hover:text-gray-700">Sèlo LOREM IPSUM</a>
+        <a href="#" class="hover:text-gray-700">Sèlo LOREM IPSUM</a>
+      </div>
+      
+      <!-- Copyright -->
+      <p class="text-sm text-gray-400">&copy; Sèlo 2025</p>
+    </div>
+</footer>
+</body>
+</html>

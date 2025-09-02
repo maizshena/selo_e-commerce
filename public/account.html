@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sélo - My Account</title>
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+  <script src="account.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white px-6 py-4 flex justify-between items-center border-b">
+    <div class="text-2xl font-semibold">sélo</div>
+    <div class="flex items-center gap-4">
+      <button><i class="fas fa-shopping-cart text-xl"></i></button>
+      <button><i class="fas fa-user-circle text-xl"></i></button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <div class="flex flex-col lg:flex-row gap-8">
+
+      <!-- Sidebar: Basic Info -->
+      <aside class="bg-white p-6 rounded-lg shadow w-full lg:w-1/3">
+        <h2 class="text-xl font-semibold mb-4">Avicénna</h2>
+
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-wallet"></i>
+            <span>E-Wallet Info</span>
+            <span class="ml-auto">000-000-000</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-credit-card"></i>
+            <span>Card Info</span>
+            <span class="ml-auto">000-000-000</span>
+          </div>
+
+          <div class="mt-6">
+            <h3 class="text-sm font-medium">My Address</h3>
+            <p id="address-box">8528 Josie Fort, South Russel, MI 58701-3871</p>
+          </div>
+
+          <div class="mt-6 border-t pt-4 text-xs space-y-1">
+            <a href="#" class="block text-blue-500 hover:underline">Get help</a>
+            <a href="#" class="block text-blue-500 hover:underline">Report a problem</a>
+            <a href="#" class="block text-blue-500 hover:underline">Rate us</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Content -->
+      <section class="flex-1 bg-white p-6 rounded-lg shadow">
+        <!-- Avatar and Buttons -->
+        <div class="flex items-center gap-6 mb-6">
+          <div class="w-24 h-24 rounded-full bg-gray-300" style="background-image: url('https://via.placeholder.com/100');"></div>
+          <div class="space-x-4">
+            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Edit Profile</button>
+            <button class="border border-black text-black px-4 py-2 rounded hover:bg-gray-100">Change my address</button>
+          </div>
+        </div>
+
+        <!-- Personal Info -->
+        <div class="space-y-4 text-sm">
+        <div class="editable-field flex items-center gap-2">
+            <p id="display-name" class="cursor-pointer hover:underline">Avicénna</p>
+        </div>
+
+          <div class="editable-field flex justify-between">
+            <span class="font-medium">Birth Date & Place</span>
+            <p id="display-birth" class="cursor-pointer hover:underline">2 Desember 2008</p>
+
+          </div>
+          <div class="editable-field flex justify-between">
+            <span class="font-medium">Gender</span>
+            <p id="display-gender" class="cursor-pointer hover:underline">Male</p>
+          </div>
+          <div class="editable-field flex justify-between">
+            <span class="font-medium">E-Mail</span>
+            <p id="display-email" class="cursor-pointer hover:underline">avicenna@gmail.com</p>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium">Phone Number</span>
+            <p id="display-phone" class="cursor-pointer hover:underline">+1191918121919</p>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results | Sélo</title>
+  <link href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/phosphor.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Borel&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Borel&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+  @keyframes fade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade {
+    animation: fade 0.3s ease-out;
+  }
+</style>
+
+<body class="bg-white text-black font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 shadow-sm">
+    <a href="index.html" class="text-3xl font-medium" style="font-family: 'Borel', sans-serif;">sélo</a>
+    <div class="flex gap-4 items-center">
+      <a href="cart.html" class="relative text-2xl hover:text-black transition">
+        <i class="ph ph-shopping-cart"></i>
+        <span id="cart-count" class="absolute -top-2 -right-2 text-xs bg-black text-white rounded-full px-1.5 hidden">0</span>
+      </a>
+      <a href="account.html" class="text-2xl hover:text-black transition">
+        <i class="ph ph-user-circle"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="flex flex-col items-center mt-10 mb-6 text-center px-4">
+    <h1 class="text-5xl font-medium" style="font-family: 'Borel', sans-serif;">sélo</h1>
+    <p class="text-sm text-gray-500 mt-2 mb-4">FIND EVERYTHING YOU NEED TO LOOK AND FEEL YOUR BEST</p>
+    <div class="relative w-full max-w-xl">
+      <input id="search-bar" type="text" placeholder="Search products..." class="w-full border rounded-full px-5 py-3 pr-12 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-300" />
+      <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">🔍</span>
+    </div>
+  </div>
+
+  <!-- Search Results -->
+  <section class="px-4 md:px-10 mb-16">
+    <h2 class="text-xl font-semibold mb-4">Search Results</h2>
+    <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+  </section>
+
+  <script src="search.js"></script>
+</body>
+</html>

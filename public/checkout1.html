@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sélo - Checkout</title>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="checkout1.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<script>
+  setTimeout(() => {
+    window.location.href = "checkout-success.html"; // ke home
+  }, 2000);
+</script>
+
+<body class="bg-gray-50">
+  <div class="max-w-6xl mx-auto p-4 md:p-8">
+    <header class="mb-8">
+      <h1 class="text-2xl font-bold">Checkout</h1>
+    </header>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Left Section: Items + Address -->
+      <div class="md:col-span-2 space-y-4">
+        <!-- Shipping Address -->
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h2 class="font-semibold mb-4">SHIPPING ADDRESS</h2>
+          <div class="flex justify-between items-center">
+            <div id="shipping-text">
+              <p>Your Address</p>
+            </div>
+            <button class="text-blue-500" id="change-address">CHANGE</button>
+          </div>
+        </div>
+
+        <!-- Product Items -->
+        <div id="checkout-items" class="space-y-4"></div>
+      </div>
+
+      <!-- Right Section: Summary -->
+      <div class="bg-white p-6 rounded-lg shadow-sm h-fit sticky top-4">
+        <h2 class="font-semibold text-lg mb-4">Order Summary</h2>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Promo</span>
+            <span id="promo">- $0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Shipping</span>
+            <span id="shipping">$0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Estimated Tax (2%)</span>
+            <span id="tax">$0.00</span>
+          </div>
+          <hr class="my-2" />
+          <div class="flex justify-between font-bold text-base">
+            <span>Total</span>
+            <span id="total">$0.00</span>
+          </div>
+          <button id="place-order" class="bg-black text-white w-full py-3 rounded hover:bg-gray-900">
+            Place Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

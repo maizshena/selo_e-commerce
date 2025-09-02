@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sélo - Cart</title>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Borel&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="cart.js" defer></script>
+  <style>
+    .toast {
+      animation: fadeInOut 2.5s ease-in-out forwards;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(20px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-6xl mx-auto p-4 md:p-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-2xl font-bold">Shopping Cart</h1>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Address -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h2 class="font-semibold mb-4">SHIPPING ADDRESS</h2>
+          <div class="flex justify-between items-center">
+            <div id="shipping-text">
+              <p>Your Address</p>
+            </div>
+            <button class="text-blue-500 hover:underline" id="change-address">CHANGE</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Cart Items will be inserted here -->
+        <div id="delete-confirm-wrapper" class="mb-4 hidden"></div>
+        <div id="cart-items" class="space-y-4">
+          <input type="checkbox" ${item.selected ? "checked" : ""} />
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="bg-white p-6 rounded-lg shadow-sm h-fit sticky top-4" id="calculateSummary">
+        <h2 class="font-semibold text-lg mb-4">Order Summary</h2>
+        <div class="space-y-3">
+          
+          <div class="flex justify-between" id="subtotal-wrapper">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+
+          <div class="flex justify-between text-red-600" id="promo-wrapper">
+            <span>Promo</span>
+            <span id="tax">-$0.00</span>
+          </div>
+
+          <div class="flex justify-between font-bold text-lg" id="total-wrapper">
+            <span>Total</span>
+            <span id="total">$0.00</span>
+          </div>
+
+          <button href="checkout1.html" class="w-full bg-black text-white py-3 rounded-lg mt-4 hover:bg-gray-800 transition">
+            Checkout
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

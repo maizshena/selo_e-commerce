@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sélo - Product Detail</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Borel&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Borel&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="product.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+<!-- NAVIGATION BAR -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div src="landing_page.html" class="text-2xl font-light" style="font-family: 'Borel', cursive;">
+      sélo
+    </div>
+    <div class="flex-1 px-6 hidden md:block">
+      <div class="relative max-w-md mx-auto">
+        <input type="text"placeholder="Search..." class="w-full pl-4 pr-10 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"/>
+        <i class="fas fa-search absolute right-3 top-2.5 text-gray-400 text-sm"></i>
+      </div>
+    </div>
+
+    <!-- Icons -->
+  <div class="flex items-center space-x-6 text-xl text-gray-600">
+    <a href="cart.html" class="relative"> <i class="fas fa-shopping-cart text-xl"></i>
+      <span id="cart-count" class="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span></a>
+    <a href="account.html" class="hover:text-black"><i class="fas fa-user-circle"></i></a>
+  </div>
+</div>
+</header>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Container -->
+  <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <!-- Image -->
+    <div class="flex justify-center">
+      <img id="product-image" alt="Product Image" class="max-h-[500px] object-contain" />
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h1 id="product-title" class="text-2xl font-semibold mb-2"></h1>
+      <p class="text-sm text-gray-500 mb-1">SOLD 400+ · <span class="text-yellow-500">⭐</span> <span id="product-rating">0</span> Rating</p>
+      <p id="product-brand" class="text-sm text-gray-700 mb-4"></p>
+
+      <div class="flex items-center gap-3">
+        <span id="product-price" class="text-2xl font-bold"></span>
+        <span id="product-original" class="line-through text-gray-400 text-sm"></span>
+      </div>
+
+      <!-- Quantity -->
+<div class="flex items-center gap-2 my-6">
+  <button id="qty-minus" class="border rounded-full w-8 h-8 text-lg flex items-center justify-center">-</button>
+  <input id="qty-value" type="text" value="1" readonly
+         class="w-8 text-center outline-none bg-transparent pointer-events-none" />
+  <button id="qty-plus" class="border rounded-full w-8 h-8 text-lg flex items-center justify-center">+</button>
+</div>
+
+<!-- Buttons -->
+<div class="flex gap-2 mb-4">
+  <button id="add-to-cart"
+          class="flex-1 bg-black text-white py-2 px-3 text-sm rounded hover:opacity-90 transition">
+    Add to Cart
+  </button>
+  <button id="wishlist-btn"
+          class="border px-3 rounded hover:bg-gray-100 transition">
+    <i class="far fa-heart text-lg"></i>
+  </button>
+</div>
+<button class="w-full border py-2 px-3 text-sm rounded hover:bg-gray-100 transition" id="buy-now">
+  Buy Now
+</button>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="max-w-4xl mx-auto px-4 mt-10">
+    <div class="border-b pb-2 flex gap-4 text-sm font-medium">
+      <span class="text-black">Detail</span>
+      <span class="text-gray-400">Review</span>
+    </div>
+    <div class="mt-4 text-sm">
+      <p id="product-description"></p>
+    </div>
+  </div>
+
+  <!-- Review Section Start -->
+<section class="max-w-4xl mx-auto p-6">
+  <!-- Summary -->
+  <div class="bg-white border rounded-lg p-6 shadow">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+      <!-- Rating summary -->
+      <div class="flex flex-col items-center md:items-start">
+        <div class="flex items-center gap-1 mb-1">
+          <!-- Stars -->
+          <div class="flex text-yellow-400 text-xl">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-800">330 Reviews</span>
+        </div>
+
+        <!-- Rating filter -->
+        <div class="flex flex-wrap gap-2 mt-2">
+          <button class="px-3 py-1 text-sm border rounded-full bg-black text-white">5.0</button>
+          <button class="px-3 py-1 text-sm border rounded-full">4.0</button>
+          <button class="px-3 py-1 text-sm border rounded-full">3.0</button>
+          <button class="px-3 py-1 text-sm border rounded-full">2.0</button>
+          <button class="px-3 py-1 text-sm border rounded-full">1.0</button>
+        </div>
+
+        <div class="flex gap-2 mt-3">
+          <button class="px-3 py-1 text-sm border rounded-full">With Photo</button>
+          <button class="px-3 py-1 text-sm border rounded-full">With Video</button>
+        </div>
+      </div>
+
+      <!-- Bar chart -->
+      <div class="flex-1 md:ml-8 w-full">
+        <div class="space-y-1">
+          <!-- Repeat 5x -->
+          <div class="flex items-center gap-2 text-sm">
+            <span class="w-4">5</span>
+            <div class="w-full h-2 bg-gray-200 rounded">
+              <div class="h-full bg-yellow-400 rounded" style="width: 70%"></div>
+            </div>
+            <span>210</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sort by -->
+    <div class="flex justify-end mt-4 text-sm text-gray-600">
+      <label for="sort" class="mr-2">Sort:</label>
+      <select id="sort" class="border rounded px-2 py-1 text-sm">
+        <option>Most Helpful</option>
+        <option>Most Recent</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Review list -->
+  <div class="mt-6 space-y-6">
+    <!-- Repeat per review -->
+    <div class="flex gap-4 items-start">
+      <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+      <div class="flex-1">
+        <h4 class="font-semibold text-sm">Michael Angelo</h4>
+        <div class="flex items-center text-yellow-400 text-sm mt-1">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="text-sm mt-1">Good quality, love this very much! <span class="text-gray-400 text-xs">Reply this review</span></p>
+        <div class="flex items-center gap-2 mt-2 text-sm text-gray-600">
+          <span>Did this reply help you?</span>
+          <button class="flex items-center border rounded-full px-3 py-1 gap-1"><i class="far fa-thumbs-up"></i>Yes</button>
+          <button class="flex items-center border rounded-full px-3 py-1 gap-1"><i class="far fa-thumbs-down"></i>No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Review Section End -->
+</body>
+</html>

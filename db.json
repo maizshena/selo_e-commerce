@@ -1,0 +1,25 @@
+{
+  "products" : [
+  {
+    "id": 1,
+    "title": "AERI SLEEVE",
+    "price": 20,
+    "description": "Lorem ipsum dolor sit amet",
+    "image": "https://img.freepik.com/free-photo/woman-white-tee-blue-loose-pants-minimal-fashion_53876-104308.jpg"
+  },
+  {
+    "id": 2,
+    "title": "LONG PANTS",
+    "price": 45,
+    "description": "Lorem ipsum dolor sit amet",
+    "image": "https://img.freepik.com/free-photo/blue-line-loose-pants-women-s-apparel-rear-view_53876-102139.jpg"
+  },
+  {
+    "id": 3,
+    "title": "SAKHA BUTTON CARDIGAN",
+    "price": 30,
+    "description": "Lorem ipsum dolor sit amet",
+    "image": "https://img.freepik.com/free-photo/asian-man-brown-cardigan-shorts-comfortable-loungewear-full-body_53876-104301.jpg"
+  }
+]
+}
